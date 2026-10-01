@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Oliy ta'limda interaktiv darslardan foydalanish bo'yicha anonim tadqiqot so'rovnomasi">
+  <title>Interaktiv dars tajribasi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="particles" aria-hidden="true"></div>
+  <div id="mouseGlow" aria-hidden="true"></div>
+
+  <main class="app">
+    <section id="welcomeScreen" class="welcome-screen">
+      <div class="hero-card">
+        <div class="badge">TA'LIM TEXNOLOGIYALARI TADQIQOTI</div>
+        <h1>🎓 INTERAKTIV DARS TAJRIBASI</h1>
+        <p class="subtitle">Oliy ta'limda interaktiv darslardan foydalanish bo'yicha tadqiqot</p>
+        <p class="intro">Sizning tajribangiz — yangi ta'lim platformasi uchun asos.</p>
+
+        <div class="info-grid">
+          <div class="info-card"><strong>⏱</strong><span>3–5 daqiqa</span></div>
+          <div class="info-card"><strong>🔒</strong><span>Anonim</span></div>
+          <div class="info-card"><strong>📊</strong><span>15 ta savol</span></div>
+        </div>
+
+        <button id="startBtn" class="primary-btn" type="button">🚀 So'rovnomani boshlash</button>
+        <p class="privacy-note">Javoblar faqat tadqiqot va statistik tahlil maqsadida ishlatiladi.</p>
+      </div>
+    </section>
+
+    <section id="surveyScreen" class="survey-screen hidden">
+      <div class="progress-area">
+        <div class="progress-text">
+          <span id="progressLabel">Savol 1 / 15</span>
+          <span id="progressPercent">7%</span>
+        </div>
+        <div class="progress-bar" aria-hidden="true">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="question-card">
+        <div id="questionNumber" class="question-number">01</div>
+        <h2 id="questionTitle">Savol yuklanmoqda...</h2>
+        <p id="questionHelp" class="question-help">O'zingizga mos variantni tanlang.</p>
+        <div id="optionsContainer" class="options"></div>
+        <div id="validationMessage" class="validation-message" role="alert"></div>
+        <button id="nextBtn" class="next-btn" type="button">Keyingi →</button>
+      </div>
+    </section>
+
+    <section id="completeScreen" class="complete-screen hidden">
+      <div class="hero-card complete-card">
+        <div class="success-icon">✓</div>
+        <div class="badge">TADQIQOT YAKUNLANDI</div>
+        <h1>Rahmat!</h1>
+        <p class="subtitle">Sizning javoblaringiz tadqiqotga qo'shildi.</p>
+        <p class="intro">Sizning tajribangiz kelajakdagi ta'lim platformasi imkoniyatlarini shakllantirishga yordam beradi.</p>
+        <button id="restartBtn" class="primary-btn" type="button">↻ Qayta to'ldirish</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
