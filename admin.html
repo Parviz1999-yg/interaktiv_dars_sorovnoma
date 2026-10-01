@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interaktiv dars — Statistika</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="bg-glow"></div>
+  <main class="dashboard">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">RESEARCH DASHBOARD</p>
+        <h1>Interaktiv dars tajribasi</h1>
+        <p class="muted">O‘qituvchilar so‘rovnomasi statistikasi</p>
+      </div>
+      <button id="refreshBtn" class="refresh">↻ Yangilash</button>
+    </header>
+
+    <section id="status" class="status">Ma’lumotlar yuklanmoqda...</section>
+
+    <section class="cards">
+      <article class="card"><span>Jami respondentlar</span><strong id="total">—</strong></article>
+      <article class="card"><span>Beta qiziqishi</span><strong id="beta">—</strong></article>
+      <article class="card"><span>AI foydali deb baholaganlar</span><strong id="ai">—</strong></article>
+      <article class="card"><span>Aloqa qoldirganlar</span><strong id="contacts">—</strong></article>
+    </section>
+
+    <section id="sections" class="sections"></section>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>
