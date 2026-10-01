@@ -76,7 +76,12 @@ function renderSingle(q) {
 
     input.addEventListener("change", () => {
       answers[currentQuestion] = option;
-      if (currentQuestion === 14) renderContactField();
+      if (currentQuestion === 14) {
+        const oldField = document.querySelector(".contact-wrap");
+        if (oldField) oldField.remove();
+        if (option === "Ha" || option === "Balki") renderContactField();
+        else delete answers.contact;
+      }
       validationMessage.textContent = "";
     });
 
@@ -176,6 +181,10 @@ function saveCurrentAnswer() {
     return false;
   }
 
+  if (currentQuestion === 14 && answers[currentQuestion] === "Yo'q") {
+    delete answers.contact;
+  }
+
   if (q.type === "multiple" && (!Array.isArray(answers[currentQuestion]) || answers[currentQuestion].length === 0)) {
     showValidation("Kamida bitta variant tanlang.");
     return false;
@@ -227,7 +236,9 @@ async function sendToSheets(payload) {
     await fetch(SHEETS_WEB_APP_URL, {
       method: "POST",
       mode: "no-cors",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
       body
     });
     return true;
